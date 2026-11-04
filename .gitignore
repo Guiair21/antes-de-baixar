@@ -1,0 +1,12 @@
+.env
+.env.*
+*.pem
+*.key
+.playwright-mcp/
+__pycache__/
+*.log
+*.png
+*.jpg
+*.jpeg
+.DS_Store
+Thumbs.db

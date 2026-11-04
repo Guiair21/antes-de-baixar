@@ -1,0 +1,4 @@
+{
+  "US$ 100": {"valor_mes": 100, "moeda": "US$", "pct_semana_por_100k": 1.0},
+  "R$ 550": {"valor_mes": 550, "moeda": "R$", "pct_semana_por_100k": 1.0}
+}
