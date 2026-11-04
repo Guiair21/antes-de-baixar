@@ -1,0 +1,230 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>[hidden]{display:none!important}body{margin:0}.marca{white-space:nowrap}.menu{align-self:start}</style>
+<title>Antes de Baixar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: mapa de bancada; espinha vertical ao centro, fontes à esquerda, saídas à direita, leitura em tabela abaixo */
+:root{--bg:#efefef;--sf:#fff;--sf2:#e4e3e3;--ink:#171717;--mut:#5e5a58;--line:#2c2a29;--faint:#c9c6c5;--red:#7d0001;--redtx:#7d0001;--back:#00686b;--inv:#171717;--invtx:#f4f4f4;--disp:Anton,Impact,"Arial Narrow",sans-serif;--body:Inter,"Segoe UI",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151413;--sf:#22201f;--sf2:#2d2a29;--ink:#f1efee;--mut:#b0aba8;--line:#d8d4d2;--faint:#45413f;--red:#b3141a;--redtx:#ff8f88;--back:#4fd0cf;--inv:#f1efee;--invtx:#171717;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#151413;--sf:#22201f;--sf2:#2d2a29;--ink:#f1efee;--mut:#b0aba8;--line:#d8d4d2;--faint:#45413f;--red:#b3141a;--redtx:#ff8f88;--back:#4fd0cf;--inv:#f1efee;--invtx:#171717;color-scheme:dark}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);overflow-x:hidden}
+.w{max-width:1320px;margin:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px}
+h1,h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(42px,8vw,68px);line-height:1.05}h2{font-size:26px;margin:48px 0 12px}
+.lead{max-width:68ch;margin:10px 0 18px;font-size:16px}.note{color:var(--mut);font-size:13.5px;max-width:78ch}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.filtros button{font:600 13px var(--body);padding:8px 12px;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:4px;cursor:pointer}
+.filtros button[aria-pressed=true]{background:var(--inv);color:var(--invtx)}
+#cont{font-weight:600;margin:8px 0 2px}#desc{color:var(--mut);margin:0 0 12px;max-width:78ch;font-size:14px}
+.leg{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0;font-size:13px}.leg span{display:flex;gap:8px;align-items:center}.leg svg{flex:none}
+.seal-leg{background:var(--red);color:#fff;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:3px;font-style:normal}
+#scroll{overflow-x:auto;border:1px solid var(--faint);background:var(--bg);-webkit-overflow-scrolling:touch}
+#mapa{position:relative;width:1280px;height:1010px}#mapa svg{position:absolute;inset:0}
+.cab{position:absolute;top:14px;font:600 12px var(--body);letter-spacing:.07em;text-transform:uppercase;color:var(--mut);text-align:center}
+.n{position:absolute;transition:opacity .15s}.n.off{opacity:.13}
+.n>button{width:100%;height:100%;display:block;padding:7px 10px;text-align:center;color:var(--ink);background:var(--sf);border:1.5px solid var(--line);border-radius:6px;cursor:pointer;overflow:hidden;font-family:var(--body)}
+.n b{display:block;font:400 17px/1.15 var(--disp);text-transform:uppercase;letter-spacing:.02em}.n i{display:block;font-style:normal;font-size:11.5px;line-height:1.25;color:var(--mut);margin-top:3px}
+.n.opt>button{border-style:dashed}.n.loop>button{border:4px double var(--back)}
+.n.dec>button{background:var(--inv);border:0;border-radius:0;clip-path:polygon(9% 0,91% 0,100% 50%,91% 100%,9% 100%,0 50%);padding-inline:24px}.n.dec b{color:var(--invtx)}.n.dec i{color:var(--invtx);opacity:.82}
+.n.fonte>button,.n.saida>button{background:var(--sf2);border:1px solid var(--faint);border-radius:3px}.n.fonte b,.n.saida b,.n.para b{font:600 13px/1.2 var(--body);text-transform:none;letter-spacing:0}
+.n.para>button{background:transparent;border:1.5px solid var(--redtx)}.n.para b{color:var(--redtx)}
+.n>button:hover{background:var(--sf2)}.n.dec>button:hover{background:var(--mut)}
+.n>button:focus-visible,.filtros button:focus-visible,td button:focus-visible,#painel button:focus-visible,#painel summary:focus-visible,#scroll:focus-visible{outline:3px solid var(--back);outline-offset:2px}.n.dec>button:focus-visible{outline-offset:-5px}
+.n.sel>button{box-shadow:0 0 0 3px var(--back)}.n.dec.sel>button{background:var(--back)}
+.selo{position:absolute;top:-9px;right:6px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;pointer-events:none;z-index:2}
+.e{fill:none;stroke:var(--line);stroke-width:1.6;transition:opacity .15s}.e.opt{stroke-dasharray:6 5}.e.back{stroke:var(--back);stroke-width:2}.e.link{stroke:var(--faint);stroke-width:1}.e.link.on{stroke:var(--ink);stroke-width:2.2}.e.off{opacity:.07}
+.lb{position:absolute;font-size:11.5px;line-height:1.2;font-weight:500;padding:1px 4px;background:var(--bg);color:var(--ink);transition:opacity .15s;white-space:nowrap}.lb.back{color:var(--back);font-weight:600}.lb.off{opacity:.08}
+#painel{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--sf);border-left:2px solid var(--line);z-index:20;overflow:auto;padding:max(18px,env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 28px 20px;box-shadow:-10px 0 30px rgba(0,0,0,.18)}
+#painel h3{font:400 30px/1.1 var(--disp);text-transform:uppercase;margin:0 42px 6px 0}#painel h4{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:18px 0 4px}#painel p{margin:0}
+#fechar{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));width:36px;height:36px;font-size:18px;background:transparent;color:var(--ink);border:1.5px solid var(--line);border-radius:4px;cursor:pointer}
+#painel ul{list-style:none;margin:4px 0;padding:0}#painel li{padding:3px 0;font-size:14px}#painel li button{font:600 14px var(--body);color:var(--ink);background:none;border:0;border-bottom:1px solid var(--mut);padding:0;cursor:pointer;text-align:left}
+#painel summary{cursor:pointer;font-weight:600;margin-top:20px}#painel dl{font-size:13px;margin:8px 0 0}#painel dt{color:var(--mut);margin-top:8px}#painel dd{margin:0;overflow-wrap:anywhere}code{font:12.5px Consolas,Menlo,monospace;overflow-wrap:anywhere}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:14px 28px}.g2>div{min-width:0}.g2 h3{font-size:15px;margin:0 0 3px}.g2 p{margin:0;font-size:14px}
+.tab{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--faint);vertical-align:top}th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}td button{font:600 14px var(--body);color:var(--ink);background:none;border:0;border-bottom:1px solid var(--mut);cursor:pointer;padding:0;text-align:left}
+dl.gl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:10px 28px;margin:0}dl.gl dt{font-weight:700}dl.gl dd{margin:0;font-size:14px}
+.prob{border-left:3px solid var(--redtx);padding:2px 0 2px 12px;margin:0 0 16px}.prob h3{font-size:15px;margin:0 0 3px}.prob p{margin:0;font-size:14px;max-width:80ch}.prob small{color:var(--mut);display:block;margin-top:3px}
+@media (max-width:640px){table{min-width:0}thead{display:none}tr,td{display:block}tr{padding:8px 0;border-bottom:1px solid var(--faint)}td{border:0;padding:2px 0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Início e final: faixas em preto, prata e carmim; o grafo fica intacto no meio */
+:root{--salvia:var(--p-base);--profundo:var(--p-base);--ouro:var(--p-dest);--serif:"Bodoni Moda",Didot,Georgia,serif;--faixa:#fff;--faixatx:#171717;--faixamut:#5e5a58}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--salvia:var(--p-base);--faixa:#1b1a19;--faixatx:#f1efee;--faixamut:#b0aba8}}
+:root[data-theme="dark"]{--salvia:var(--p-base);--faixa:#1b1a19;--faixatx:#f1efee;--faixamut:#b0aba8}
+.inner{max-width:1320px;margin:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.hero{background:var(--salvia);color:#fff;overflow:hidden}
+.hero .inner{position:relative;min-height:620px;padding-block:22px 34px;display:grid;grid-template-columns:170px minmax(0,1fr) minmax(0,1.15fr);grid-template-rows:auto 1fr auto;gap:0 24px}
+.marca{grid-column:1/3;font:500 20px var(--serif)}
+.menu{grid-column:3;justify-self:end;display:flex;flex-wrap:wrap;gap:4px;background:var(--profundo);border-radius:22px;padding:4px}
+.menu a{color:#fff;text-decoration:none;font-size:13px;padding:6px 12px;border-radius:18px}.menu a:hover,.menu a:focus-visible{background:var(--salvia);outline:0}
+.selos{grid-row:2;align-self:center;display:grid;gap:18px;margin:0}.selos div{border-left:2px solid var(--ouro);padding-left:10px}.selos dt{font:500 30px/1 var(--serif)}.selos dd{margin:2px 0 0;font-size:12.5px}
+.obj{grid-row:2;grid-column:2;position:relative;align-self:center;justify-self:center;width:min(100%,400px)}
+.obj svg{display:block;width:100%;height:auto;overflow:visible}
+.obj .sombra{position:absolute;left:4%;right:10%;bottom:-2%;height:38%;background:var(--p-ob1);border-radius:50%;filter:blur(38px);opacity:.55}
+.obj .giro{position:relative;transform:rotate(calc(-14deg + var(--g,0deg)))}
+.txt{grid-row:2;grid-column:3;align-self:center}
+.hero h1{font:400 clamp(52px,7.4vw,108px)/1 var(--serif);text-transform:none;letter-spacing:-.015em}.hero h1 span{display:block;color:var(--ouro)}
+.hero .lead{margin:24px 0 0;max-width:46ch;color:#fff}
+.desce{grid-row:3;grid-column:1/-1;font-size:12.5px}.desce a{color:#fff}
+.meio{padding-block:24px 40px}
+.fx{padding-block:64px}.fx h2{font:400 clamp(36px,4.6vw,60px)/1.05 var(--serif);text-transform:none;margin:0 0 28px;letter-spacing:-.01em}
+.claro{background:var(--faixa);--ink:var(--faixatx);--mut:var(--faixamut);color:var(--faixatx)}
+.prof{background:var(--profundo);color:#ece9eb;--ink:#ece9eb;--mut:var(--p-neutra);--faint:#3a353a;--redtx:var(--p-dest);--sf2:#1c181c}.prof h2{color:#a9d2c3}
+.corte{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.corte>div{padding-block:64px;min-width:0}.corte h2{font:400 clamp(36px,4.6vw,60px)/1.05 var(--serif);text-transform:none;margin:0 0 24px}
+.corte .a{background:var(--faixa);color:var(--faixatx);--mut:var(--faixamut);padding-left:max(16px,calc((100vw - 1288px)/2));padding-right:32px}.corte .b{background:var(--profundo);color:#ece9eb;padding-right:max(16px,calc((100vw - 1288px)/2));padding-left:32px}.corte .b h2{color:#a9d2c3}
+.corte .g2{grid-template-columns:minmax(0,1fr)}
+.fim{background:var(--profundo);color:#ece9eb;position:relative;overflow:hidden;padding-bottom:150px}.painelfim{height:70px;background:var(--salvia);margin-bottom:36px}.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:24px;align-items:start;position:relative;z-index:1}.marca2{font:500 22px var(--serif)}.cols h3{font-size:12px;font-weight:500;color:var(--p-neutra);margin:0 0 8px}.cols nav a{display:block;color:#ece9eb;text-decoration:none;font-size:14px;padding:3px 0}.cols nav a:hover{text-decoration:underline}.cols p{margin:0;font-size:14px;max-width:26ch}.carimbo{justify-self:start;width:96px;height:96px;display:grid;place-items:center;text-align:center;background:var(--ouro);color:#fff;font:600 13px/1.1 var(--body);text-decoration:none;transform:rotate(-14deg);clip-path:polygon(50% 0,61% 8%,75% 7%,80% 20%,93% 25%,92% 39%,100% 50%,92% 61%,93% 75%,80% 80%,75% 93%,61% 92%,50% 100%,39% 92%,25% 93%,20% 80%,7% 75%,8% 61%,0 50%,8% 39%,7% 25%,20% 20%,25% 7%,39% 8%);padding:14px}.obj2{position:absolute;left:50%;bottom:-210px;width:340px;margin-left:-170px;opacity:.5;transform:rotate(-14deg)}
+@media (max-width:900px){.hero .inner{grid-template-columns:minmax(0,1fr);grid-template-rows:none;min-height:0;gap:22px}.marca,.menu,.selos,.obj,.txt,.desce{grid-column:1;grid-row:auto;justify-self:start}.obj{width:min(72%,280px);justify-self:center}.selos{grid-auto-flow:column;grid-auto-columns:1fr;gap:10px}.selos dt{font-size:24px}.corte{grid-template-columns:minmax(0,1fr)}.corte .a,.corte .b{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+
+.hero h1 span{color:var(--p-neutra)}.hero .lead{color:#e4e1e3}.menu{background:var(--p-menu)}.menu a:hover,.menu a:focus-visible{background:var(--p-dest)}.selos div{border-color:var(--p-dest)}
+.painelfim{background:var(--p-dest);height:10px}.carimbo{color:#fff}.prof h2,.corte .b h2{color:var(--p-neutra)}
+.corte .a{background:var(--p-neutra);color:var(--p-base);--mut:#2e2a2e}.hero .inner{min-height:620px}
+
+/* Correções do revisor de design */
+.hero{border-bottom:8px solid var(--p-dest)}.meio{padding-top:56px;padding-bottom:80px}.meio>.note{font-size:15px;color:var(--ink)}
+.leg{margin-bottom:32px}.filtros{margin-top:20px}.cab{color:var(--ink);letter-spacing:.12em;border-bottom:1px solid var(--faint);padding-bottom:4px}
+.fx h2,.corte h2{font-size:clamp(40px,4.2vw,56px);line-height:1.05;letter-spacing:-.01em;font-weight:400;font-optical-sizing:auto}.corte h2{max-width:14ch}
+.selos{align-self:end;margin-bottom:28px}.prof .inner{grid-template-rows:auto 1fr}.prof .inner>.note{margin-top:0}.desce a{display:inline-block;border:1px solid var(--p-neutra);padding:12px 20px;text-decoration:none;border-radius:4px}.desce a:hover,.desce a:focus-visible{background:var(--p-neutra);color:var(--p-base);outline:0}
+.prof .inner{display:grid;grid-template-columns:280px minmax(0,1fr);gap:0 48px;align-items:start}.prof .inner>h2,.prof .inner>.note{grid-column:1}.prof #notas{grid-column:2;grid-row:1/span 2;margin-top:0!important}.prof .prob{margin-bottom:28px}.prof .inner>h2{font-size:clamp(40px,3.4vw,48px)}
+.carimbo{transform:none}.obj2{bottom:-170px}
+@media (max-width:900px){.prof .inner{grid-template-columns:minmax(0,1fr);grid-template-rows:none}.prof #notas{grid-column:1;grid-row:auto;margin-top:16px!important}.selos{align-self:start}}
+.custo{margin-top:18px;max-width:50ch;border-left:3px solid var(--p-dest);padding-left:12px;font-size:14px;color:#e4e1e3}.veredito{margin:18px 0 0;max-width:46ch;border-left:3px solid var(--p-dest);padding-left:12px;font-size:15px;color:#fff}.veredito a{color:#fff}
+.pratica{background:var(--faixa);color:var(--faixatx);--mut:var(--faixamut);padding-block:40px}.pratica .inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 56px}
+.pratica h2{font:400 clamp(30px,3vw,40px)/1.05 var(--serif);letter-spacing:-.01em;margin:0 0 10px;text-transform:none}.pratica p{margin:0;font-size:16px;max-width:60ch}.pratica ul{list-style:none;margin:0;padding:0;font-size:15px}.pratica li{padding:0 0 8px}.pratica small{color:var(--mut);display:block;margin-top:4px}
+.pratica .custo{grid-column:1/-1;max-width:none;color:var(--faixatx);margin:0}
+@media (max-width:900px){.pratica .inner{grid-template-columns:minmax(0,1fr)}}
+:root{--p-base:#0c090d;--p-neutra:#c0babf;--p-ctx:#0c090d;--p-t2:#c0babf;--p-sec:#c0babf;--p-dest:#c70010;--p-dtx:#ffffff;--p-menu:#262226;--p-ob1:#000000;--p-ob2:#2a262a}:root[data-paleta="atual"]{--p-base:#0c090d;--p-neutra:#c0babf;--p-ctx:#0c090d;--p-t2:#c0babf;--p-sec:#c0babf;--p-dest:#c70010;--p-dtx:#ffffff;--p-menu:#262226;--p-ob1:#000000;--p-ob2:#2a262a}:root[data-paleta="energia"]{--p-base:#171418;--p-neutra:#0e77a2;--p-ctx:#ffffff;--p-t2:#4fb3d9;--p-sec:#bcd9e6;--p-dest:#e91083;--p-dtx:#000000;--p-menu:#262c33;--p-ob1:#050406;--p-ob2:#0a3f57}:root[data-paleta="moderno"]{--p-base:#3a0b2e;--p-neutra:#c5ccd8;--p-ctx:#3a0b2e;--p-t2:#c5ccd8;--p-sec:#d5dae3;--p-dest:#ef9a09;--p-dtx:#1f0618;--p-menu:#531a45;--p-ob1:#1c0416;--p-ob2:#5a2a4e}:root[data-paleta="futurista"]{--p-base:#794b3b;--p-neutra:#d1cecb;--p-ctx:#3f261d;--p-t2:#d1cecb;--p-sec:#f1efed;--p-dest:#d3c1de;--p-dtx:#2b1a14;--p-menu:#4f2f24;--p-ob1:#3f261d;--p-ob2:#54321f}:root[data-paleta="ousado"]{--p-base:#06020d;--p-neutra:#0200c6;--p-ctx:#ffffff;--p-t2:#b9b8ff;--p-sec:#c9c8ff;--p-dest:#a60023;--p-dtx:#ffffff;--p-menu:#17131f;--p-ob1:#000000;--p-ob2:#14127a}:root[data-paleta="industrial"]{--p-base:#181519;--p-neutra:#858c9a;--p-ctx:#181519;--p-t2:#858c9a;--p-sec:#c8ccd3;--p-dest:#ea3127;--p-dtx:#000000;--p-menu:#2b282d;--p-ob1:#050405;--p-ob2:#3d4048}
+.cols h3{color:var(--p-sec)}.hero h1 span,.prof h2,.corte .b h2{color:var(--p-t2)}.prof{--mut:var(--p-sec)}.corte .b{--mut:var(--p-sec)}
+.corte .a{background:var(--p-neutra);color:var(--p-ctx);--mut:var(--p-ctx)}.carimbo{color:var(--p-dtx)}.menu{background:var(--p-menu)}.menu a:hover,.menu a:focus-visible{color:var(--p-dtx)}.desce a:hover,.desce a:focus-visible{color:var(--p-base)}
+.paletas{grid-row:3;grid-column:3;justify-self:end;align-self:end;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;margin:0;padding:0;border:0}.paletas legend{float:left;padding:0;margin-right:6px}
+.paletas button{width:34px;height:34px;padding:0;border:2px solid transparent;border-radius:50%;background:none;cursor:pointer;display:grid;place-items:center}.paletas button i{display:block;width:24px;height:24px;border-radius:50%;border:1px solid #fff8}.paletas button[aria-pressed=true]{border-color:#fff}.paletas button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.desce{grid-column:1/3}
+@media (max-width:900px){.paletas,.desce{grid-column:1;grid-row:auto;justify-self:start}}
+.hero .inner{grid-template-columns:170px minmax(0,1fr);min-height:0;gap:0 48px}.marca{grid-column:1}.menu{grid-column:2}.txt{grid-column:2;padding-block:28px}.paletas{grid-column:2}.desce{grid-column:1}.hero h1{font-size:clamp(52px,9vw,132px)}.hero .lead,.veredito{max-width:62ch}.fim{padding-bottom:40px}.desce a{white-space:nowrap}
+@media (max-width:900px){.hero .inner{grid-template-columns:minmax(0,1fr)}.marca,.menu,.txt,.paletas,.desce,.selos{grid-column:1}.txt{padding-block:0}}
+.credito{margin:32px 0 0;padding-top:16px;border-top:1px solid #fff3;font-size:13px;color:var(--p-sec)}.credito a{color:inherit}
+</style>
+<header class="hero"><div class="inner">
+<div class="marca">Como ela funciona</div>
+<nav class="menu" aria-label="Seções"><a href="#grafo">Grafo</a><a href="#instalar">Antes de instalar</a><a href="#para">Paradas</a><a href="#etapas">Etapas</a></nav>
+<dl class="selos"><div><dt>12</dt><dd>etapas no mapa</dd></div><div><dt>3</dt><dd>cenários reais</dd></div><div><dt>1</dt><dd>script local</dd></div></dl>
+<div class="txt"><h1>Antes de <span>Baixar</span></h1><p class="lead">Mapa desta própria skill, feito por ela mesma a partir do repositório <b>Guiair21/antes-de-baixar</b>, commit 3231a01, de 04/11/2026.</p><p class="veredito"><b>Sem veredito próprio.</b> Uma skill não pode se absolver. Abaixo está o que ela faz e toca, para você conferir. <a href="#instalar">Ver os detalhes</a></p></div>
+<fieldset class="paletas" id="paletas"><legend>Cores</legend><button type="button" data-p="atual" aria-pressed="false" aria-label="Paleta Intensidade" title="Intensidade"><i style="background:linear-gradient(90deg,#0c090d 0 40%,#c0babf 40% 70%,#c70010 70%)"></i></button><button type="button" data-p="energia" aria-pressed="false" aria-label="Paleta Energia" title="Energia"><i style="background:linear-gradient(90deg,#171418 0 40%,#0e77a2 40% 70%,#e91083 70%)"></i></button><button type="button" data-p="moderno" aria-pressed="false" aria-label="Paleta Moderno" title="Moderno"><i style="background:linear-gradient(90deg,#3a0b2e 0 40%,#c5ccd8 40% 70%,#ef9a09 70%)"></i></button><button type="button" data-p="futurista" aria-pressed="false" aria-label="Paleta Futurista" title="Futurista"><i style="background:linear-gradient(90deg,#794b3b 0 40%,#d1cecb 40% 70%,#d3c1de 70%)"></i></button><button type="button" data-p="ousado" aria-pressed="false" aria-label="Paleta Ousado" title="Ousado"><i style="background:linear-gradient(90deg,#06020d 0 40%,#0200c6 40% 70%,#a60023 70%)"></i></button><button type="button" data-p="industrial" aria-pressed="false" aria-label="Paleta Industrial" title="Industrial"><i style="background:linear-gradient(90deg,#181519 0 40%,#858c9a 40% 70%,#ea3127 70%)"></i></button></fieldset>
+<div class="desce"><a href="#grafo">Descer para o grafo ↓</a></div>
+</div></header>
+<section class="pratica"><div class="inner"><div><h2>Na prática</h2><p>Você manda o link de uma skill do GitHub. Sem instalar nada, o agente lê os arquivos e monta uma página com o veredito, os riscos, o gasto estimado e um mapa de como ela funciona. Assim, você decide antes de baixar.</p></div><div><h2>Para quem é</h2><ul><li><b>Serve para:</b> quem usa agentes de IA e quer entender uma skill antes de instalar.</li><li><b>Não serve para:</b> quem precisa de garantia formal de segurança.</li><li><b>Não faz:</b> não executa a skill analisada, então não mede o uso real nem prova que ela é segura.</li></ul><small>A linha "não serve para" é leitura minha a partir dos arquivos.</small></div><div class="custo"><b>Estimativa de gasto para carregar:</b> cerca de 115 tokens em toda sessão, 3,1 mil de instruções ao acionar e mais 11 mil se ler o exemplo. No total de 14 mil: 0,14% da semana, cerca de US$ 0,03 no plano de US$ 100 por mês e R$ 0,18 no de R$ 550 por mês. Premissa sem fonte oficial: 10 milhões de tokens por semana, com o mês dividido em cerca de 4,3 semanas. O trabalho de cada análise não foi medido e costuma custar bem mais, porque depende do tamanho do repositório. A auditoria opcional custou cerca de US$ 3,40 em preço de API por rodada no modelo mais capaz, em uma sessão medida.</div><div><h2>Confiabilidade</h2><p>Repositório novo, publicado em 04/11/2026, sem histórico público de uso. Licença MIT.</p><small>Popularidade não prova segurança, e a falta dela também não prova o contrário.</small></div><div><h2>O que mais se comenta</h2><p>Ainda não há issues.</p><small>Situação na data da publicação.</small></div></div></section>
+<div class="w meio" id="grafo">
+<p class="note">Algumas posições são interpretação minha: os nomes dos cenários, as etapas mostradas lado a lado e a volta de leitura. A skill também mapeia processos locais, o que este mapa não detalha.</p>
+<div class="filtros" id="filtros" role="group" aria-label="Cenários"></div>
+<p id="cont" aria-live="polite"></p><p id="desc"></p>
+<div class="leg" aria-label="Legenda">
+<span><svg width="42" height="10"><path d="M0 5H42" stroke="var(--line)" stroke-width="1.6"/></svg>Próximo passo</span>
+<span><svg width="42" height="10"><path d="M0 5H42" stroke="var(--line)" stroke-width="1.6" stroke-dasharray="6 5"/></svg>Só em alguns casos</span>
+<span><svg width="42" height="10"><path d="M0 5H42" stroke="var(--back)" stroke-width="2"/></svg>Volta atrás, com o motivo na seta</span>
+<span><svg width="42" height="10"><path d="M0 5H42" stroke="var(--faint)"/></svg>Consulta ou produz; fica forte ao selecionar</span>
+<span><i class="seal-leg">PODE PARAR</i>Pode parar e chamar você</span>
+<span><svg width="30" height="16"><polygon points="4,0 26,0 30,8 26,16 4,16 0,8" fill="var(--inv)"/></svg>Decisão</span>
+</div>
+<div id="scroll" tabindex="0" aria-label="Grafo; no celular, role para o lado"><div id="mapa"><svg id="sv" width="1280" height="1010" aria-hidden="true"><defs>
+<marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--line)"/></marker>
+<marker id="b" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--back)"/></marker></defs></svg></div></div>
+
+</div>
+<section class="fx prof" id="instalar"><div class="inner"><h2>Antes de instalar</h2><p class="note"><b>Avaliação feita pela própria skill, portanto não independente.</b> O repositório passou por uma auditoria de vazamento de dados antes de ser publicado. Leia o <code>SKILL.md</code> você também.</p><div id="notas">
+<div class="prob"><h3>O que ela roda</h3><p>Um único script, <code>scripts/custo.py</code>, que faz a conta do gasto. As instruções mandam o agente usar <code>gh</code> e abrir um navegador para testar a página.</p><small>Lido no código. <code>scripts/custo.py</code>; <code>SKILL.md</code>.</small></div>
+<div class="prob"><h3>O que ela toca</h3><p>Consulta o GitHub com o seu login do <code>gh</code>, cria a página e pode publicá-la, se houver ferramenta para isso. O script só grava em <code>scripts/planos.json</code>, e só com o comando <code>calibrar</code>. Pode copiar o repositório analisado para uma pasta temporária.</p><small>Lido no código. <code>scripts/custo.py</code>; <code>SKILL.md</code>, "Skill de terceiro" e "Antes de entregar".</small></div>
+<div class="prob"><h3>O que sai para a internet</h3><p>Leituras no GitHub. As páginas carregam fontes do Google e trazem um link para o Instagram do autor no rodapé. A página pode guardar no navegador a paleta escolhida.</p><small>Lido no código. <code>exemplo/mapa-webapp-testing.html</code>.</small></div>
+<div class="prob"><h3>De que depende</h3><p>Python 3 e GitHub CLI. Um agente que siga as instruções, um navegador para os testes e, para a auditoria, suporte a subagentes.</p><small>Lido no código. <code>README.md</code>; <code>SKILL.md</code>.</small></div>
+<div class="prob"><h3>Limites conhecidos</h3><p>A opção de colar uma promessa ainda não teve teste real. A instalação a partir do GitHub em máquina limpa também não foi testada. O gasto mostrado é estimativa.</p><small>Situação em 04/11/2026.</small></div>
+</div></div></section>
+<section class="corte" id="para"><div class="a"><h2>Quando o processo para</h2><div class="g2">
+<div><h3>Sua resposta</h3><p>A skill pergunta sobre a auditoria e espera.</p></div>
+<div><h3>Nota abaixo de 9</h3><p>A correção é repetida em até 3 rodadas, com o seu aval.</p></div>
+<div><h3>Entrega</h3><p>Você recebe a página, com o que está errado e o que não foi testado.</p></div>
+</div></div><div class="b"><h2>Quem faz o quê</h2><div class="g2">
+<div><h3>Você</h3><p>Manda o link, escolhe a auditoria e decide se instala.</p></div>
+<div><h3>O agente</h3><p>Lê, analisa e monta a página.</p></div>
+<div><h3>O script</h3><p>Faz a conta do gasto estimado.</p></div>
+<div><h3>O auditor</h3><p>Confere o resultado, se você escolher.</p></div>
+</div></div></section>
+<section class="fx claro" id="etapas"><div class="inner"><h2>Todas as etapas</h2><div class="tab"><table><thead><tr><th>Etapa</th><th>O que responde</th><th>Quando acontece</th></tr></thead><tbody id="tb"></tbody></table></div></div></section>
+<section class="fx claro" style="padding-top:0"><div class="inner"><h2>Glossário</h2><dl class="gl">
+<div><dt>Skill</dt><dd>Um pacote de instruções que ensina um agente de IA a fazer uma tarefa.</dd></div>
+<div><dt>Commit</dt><dd>Um registro de alteração no projeto, com data e identificador.</dd></div>
+<div><dt>Issue</dt><dd>Um relato ou pedido aberto no repositório do GitHub.</dd></div>
+<div><dt>Subagente</dt><dd>Um agente separado, chamado para uma tarefa específica.</dd></div>
+<div><dt>Token</dt><dd>A unidade que mede quanto texto a IA lê e escreve.</dd></div>
+</dl></div></section>
+<footer class="fim"><div class="inner"><div class="painelfim"></div><div class="cols"><div class="marca2">Antes de Baixar</div><nav aria-label="Rodapé"><h3>Mapa</h3><a href="#grafo">Grafo</a><a href="#instalar">Antes de instalar</a><a href="#para">Paradas</a><a href="#etapas">Etapas</a></nav><div><h3>Base</h3><p>Guiair21/antes-de-baixar, commit 3231a01. Lido em 04/11/2026.</p></div><a class="carimbo" href="#instalar">ver os detalhes</a></div><p class="credito">Skill criada por Guilherme Carlos da Silva. Testo inteligência artificial para produzir conteúdo e conto o que deu certo e o que não deu: <a href="https://www.instagram.com/euguicarlos/" target="_blank" rel="noopener">@euguicarlos</a>.</p></div></footer>
+<aside id="painel" hidden role="dialog" aria-modal="false" aria-labelledby="pt"><button id="fechar" type="button" aria-label="Fechar painel">×</button><div id="pc"></div></aside>
+<script>(()=>{
+const R=i=>64+i*108,W=190,H=76,S='SKILL.md';
+const N=[
+['link',640,0,'Receber o link','Qual skill analisar?','Recebe o endereço de uma skill no GitHub. Pode vir junto uma promessa que você viu.','Sempre, no começo.','início','Pedido',S+', Skill de terceiro','Avança sempre.'],
+['escolher',640,1,'Quer auditoria?','Vale pagar a conferência?','Mostra o custo e pergunta se um segundo agente deve conferir o resultado.','Antes de analisar.','decisão','Pergunta ao usuário',S+', Skill de terceiro','Opções: sem auditor, modelo mais barato ou modelo mais capaz.','dec h'],
+['ler',640,2,'Ler sem instalar','O que há nos arquivos?','Lê instruções, scripts e configurações no GitHub. Nada é instalado nem executado.','Depois da escolha.','passo','gh api ou raw.githubusercontent.com',S+', Skill de terceiro, itens 1 a 5','Fixa o commit lido. Se copiar, usa pasta temporária.','loop'],
+['riscos',530,3,'Procurar riscos','O que ela roda e envia?','Procura rede, chaves, ações perigosas e ordens ao agente, inclusive nos textos.','Junto da busca de sinais.','passo','Leitura e busca',S+', item 4','Cada resultado da busca é aberto antes do veredito.'],
+['sinais',750,3,'Buscar os sinais','Há quanto uso e atividade?','Reúne estrelas, cópias, colaboradores, licença e as issues mais comentadas.','Junto da busca de riscos.','passo','gh api',S+', Confiabilidade','Dados datados, sem nota inventada.'],
+['promessa',380,4,'Conferir a promessa','Os arquivos confirmam?','Compara o que você colou com os arquivos: confirma, desmente ou não permite dizer.','Só se você colar uma promessa.','ramo','Leitura',S+', Promessa colada','Sem promessa, esta seção não existe. Etapa ainda sem teste real.','opt'],
+['veredito',640,4,'Dar o veredito','Vale instalar?','Conclui com instalar, instalar com ressalva ou não instalar, sempre com o motivo.','Depois da leitura.','passo','Análise',S+', Antes de instalar','Sempre avisa que ler o código não garante segurança.'],
+['montar',530,5,'Montar o mapa','Como ela funciona?','Monta a página com o mapa, partindo do exemplo incluído.','Depois do veredito.','passo','exemplo/mapa-webapp-testing.html',S+', O que a página contém','Reescreve só se a estrutura não couber.'],
+['custo',750,5,'Calcular o gasto','Quanto ela carrega?','Estima o que a skill analisada carrega, com a premissa à vista.','Junto da montagem.','passo','python scripts/custo.py','scripts/custo.py','Caracteres divididos por 4. Uso real fica como não medido.'],
+['testar',640,6,'Testar a página','A página funciona?','Olha a página em computador e celular, nos dois temas, e testa cliques e filtros.','Antes de entregar.','passo','Navegador',S+', Antes de entregar','Corrige caixa estourada e seta sobre texto.'],
+['auditar',900,7,'Auditar às cegas','Outro agente concorda?','Um agente sem a conversa confere a página contra os arquivos e dá nota.','Só se você escolheu auditoria.','ramo','Subagente',S+', Antes de entregar','Corte em 9. Até 3 rodadas, com o seu aval.','opt h'],
+['entregar',640,7,'Entregar a página','O que você recebe?','Entrega a página e diz o que está errado e o que não foi testado.','No fim.','fim','HTML',S+', Antes de entregar','Sem auditoria, a página avisa isso.']
+].map(a=>({id:a[0],x:a[1],y:R(a[2]),t:a[3],s:a[4],o:a[5],q:a[6],tag:a[7],tool:a[8],src:a[9],rule:a[10],c:(a[11]||'').split(' ').filter(Boolean),tipo:'etapa',w:W,h:H}));
+const X=(id,col,row,t,s,o,q,tool,src,tipo)=>N.push({id,x:col?1165:115,y:R(row)+6,t,s,o,q,tool,src,rule:'Não é etapa da espinha.',c:[tipo],tipo,w:190,h:64});
+X('f1',0,2,'Repositório analisado','Só como dado','O conteúdo é lido como dado. Ordens dirigidas ao agente viram alerta.','Na leitura.','GitHub',S+', item 3','fonte');
+X('f2',0,5,'Exemplo e planos','Vêm na skill','Modelo da página e planos usados na conta do gasto.','Ao montar.','exemplo/, scripts/planos.json','Repositório','fonte');
+X('o1',1,4,'Veredito e riscos','Com arquivo e linha','A conclusão, com as evidências.','Em toda análise.','Página',S,'saida');
+X('p1',1,1,'Para: sua resposta','Espera a escolha','A skill pergunta sobre a auditoria e aguarda.','No início.','Conversa',S,'para');
+X('p2',1,8,'Para: seu aval','Até 3 rodadas','Com nota abaixo de 9, cada nova rodada depende do seu aval.','Só com auditoria.','Conversa',S,'para');
+X('o2',1,7,'Página pronta','Arquivo HTML','O mapa para consultar e compartilhar.','No fim.','HTML',S,'saida');
+const M=Object.fromEntries(N.map(n=>[n.id,n]));
+const top=(i,d=0)=>[M[i].x+d,M[i].y],bot=(i,d=0)=>[M[i].x+d,M[i].y+M[i].h],lef=(i,d=0)=>[M[i].x-M[i].w/2,M[i].y+M[i].h/2+d],rig=(i,d=0)=>[M[i].x+M[i].w/2,M[i].y+M[i].h/2+d];
+const E=[];const e=(f,t,k,pts,l)=>E.push({f,t,k,pts,l});
+const nx=(f,t,k='next')=>e(f,t,k,[bot(f),top(t)]);
+nx('link','escolher');nx('escolher','ler');
+e('ler','ler','back',[rig('ler',-14),[770,rig('ler',-14)[1]],[770,M.ler.y-12],[700,M.ler.y-12],[700,M.ler.y]],{x:778,y:R(2)+6,t:'Próximo arquivo citado',b:1});
+e('ler','riscos','next',[bot('ler',-20),[620,R(3)-16],[530,R(3)-16],top('riscos')]);e('ler','sinais','next',[bot('ler',20),[660,R(3)-16],[750,R(3)-16],top('sinais')]);
+e('riscos','veredito','next',[bot('riscos'),[530,R(4)-16],[610,R(4)-16],top('veredito',-30)]);e('sinais','veredito','next',[bot('sinais'),[750,R(4)-16],[670,R(4)-16],top('veredito',30)]);
+e('riscos','promessa','opt',[lef('riscos'),[380,lef('riscos')[1]],top('promessa')],{x:270,y:R(3)+50,t:'Se colou promessa'});
+e('promessa','veredito','opt',[rig('promessa'),lef('veredito')]);
+e('veredito','montar','next',[bot('veredito',-20),[620,R(5)-16],[530,R(5)-16],top('montar')]);e('veredito','custo','next',[bot('veredito',20),[660,R(5)-16],[750,R(5)-16],top('custo')]);
+e('montar','testar','next',[bot('montar'),[530,R(6)-16],[610,R(6)-16],top('testar',-30)]);e('custo','testar','next',[bot('custo'),[750,R(6)-16],[670,R(6)-16],top('testar',30)]);
+nx('testar','entregar');
+e('testar','auditar','opt',[rig('testar',14),[860,rig('testar',14)[1]],top('auditar',-40)],{x:745,y:R(6)+56,t:'Se escolheu auditoria'});
+e('auditar','testar','back',[top('auditar',-5),[895,rig('testar',-14)[1]],rig('testar',-14)],{x:745,y:R(6)+5,t:'Nota abaixo de 9: corrigir',b:1});
+e('auditar','entregar','opt',[lef('auditar'),rig('entregar')],{x:738,y:R(7)+14,t:'Aprovada'});
+[['f1','ler'],['f2','montar'],['escolher','p1'],['veredito','o1'],['entregar','o2'],['auditar','p2']].forEach(([f,t])=>E.push({f,t,k:'link'}));
+const base=['link','escolher','ler','riscos','sinais','veredito','montar','custo','testar','entregar'];
+const F=[
+{k:'todos',n:'Mapa inteiro',d:'Todas as etapas possíveis.',on:N.filter(n=>n.tipo=='etapa').map(n=>n.id),x:[]},
+{k:'simples',n:'Sem auditoria',d:'O caminho mais barato. A página avisa que não houve conferência.',on:base,x:['p2'],xe:[]},
+{k:'auditada',n:'Com auditoria',d:'Um segundo agente confere e dá nota. Custa bem mais.',on:[...base,'auditar'],x:[],xe:['testar>entregar']},
+{k:'promessa',n:'Com promessa colada',d:'A página responde ao que você viu sobre a skill.',on:[...base,'promessa'],x:['p2'],xe:[]}];
+const map=document.getElementById('mapa'),sv=document.getElementById('sv');
+[['Consulta',115],['Etapas em ordem',640],['Produz e quando para',1165]].forEach(([t,x])=>{const d=document.createElement('div');d.className='cab';d.style.left=(x-110)+'px';d.style.width='220px';d.textContent=t;map.append(d)});
+N.forEach(n=>{const d=document.createElement('div');d.className='n '+n.c.filter(c=>c!='h').join(' ');d.id='n-'+n.id;Object.assign(d.style,{left:n.x-n.w/2+'px',top:n.y+'px',width:n.w+'px',height:n.h+'px'});const b=document.createElement('button');b.type='button';b.innerHTML=`<b>${n.t}</b><i>${n.s}</i>`;b.onclick=()=>abre(n.id,b);d.append(b);if(n.c.includes('h')){const s=document.createElement('span');s.className='selo';s.textContent='PODE PARAR';d.append(s)}map.append(d);n.el=d});
+E.forEach(x=>{const p=document.createElementNS('http://www.w3.org/2000/svg','path');let d;if(x.k=='link'){const a=M[x.f],b=M[x.t],lr=a.x<b.x,ax=a.x+(lr?a.w/2:-a.w/2),bx=b.x+(lr?-b.w/2:b.w/2),ay=a.y+a.h/2,by=b.y+b.h/2,c=(ax+bx)/2;d=`M${ax} ${ay}C${c} ${ay} ${c} ${by} ${bx} ${by}`}else{d='M'+x.pts.map(q=>q.join(' ')).join('L');p.setAttribute('marker-end',x.k=='back'?'url(#b)':'url(#a)')}p.setAttribute('d',d);p.setAttribute('class','e '+x.k);sv.append(p);x.el=p;if(x.l){const l=document.createElement('div');l.className='lb'+(x.l.b?' back':'');Object.assign(l.style,{left:x.l.x+'px',top:x.l.y+'px'});l.textContent=x.l.t;map.append(l);x.lel=l}});
+const tb=document.getElementById('tb');N.filter(n=>n.tipo=='etapa').forEach(n=>{const r=document.createElement('tr');r.innerHTML=`<td><button type="button">${n.t}</button></td><td>${n.s}</td><td>${n.q}</td>`;r.querySelector('button').onclick=e=>abre(n.id,e.target);tb.append(r)});
+const painel=document.getElementById('painel'),pc=document.getElementById('pc');let volta=null,sel=null;
+function abre(id,orig){const n=M[id];if(orig)volta=orig;sel=id;destaca();const lig=(lst,rot)=>lst.length?`<li>${rot}: ${lst.map(o=>`<button type="button" data-g="${o}">${M[o].t}</button>`).join(', ')}</li>`:'';const u=a=>[...new Set(a)].filter(i=>i!=id);
+const ent=E.filter(x=>x.t==id&&x.k!='link').map(x=>x.f),sai=E.filter(x=>x.f==id&&x.k!='link').map(x=>x.t),con=E.filter(x=>x.t==id&&x.k=='link').map(x=>x.f),pro=E.filter(x=>x.f==id&&x.k=='link').map(x=>x.t);
+const tipoN={etapa:'Etapa',fonte:'O que o processo consulta',saida:'O que o processo produz',para:'Ponto de parada'}[n.tipo];
+const rotCon=n.tipo=='etapa'?'Consulta':'Vem de',rotPro=n.tipo=='etapa'?'Produz':'Usado por';
+pc.innerHTML=`<h3 id="pt">${n.t}</h3><p style="color:var(--mut);font-size:13px">${tipoN}${n.c.includes('h')?' · pode parar e chamar você':''}</p><h4>O que faz</h4><p>${n.o}</p><h4>Quando acontece</h4><p>${n.q}</p><h4>Com o que se liga</h4><ul>${lig(u(ent),'Vem de')}${lig(u(sai),'Segue para')}${lig(u(con),rotCon)}${lig(u(pro),rotPro)}${E.some(x=>x.f==id&&x.t==id)?'<li>Repete esta etapa para cada arquivo citado.</li>':''}</ul><details><summary>Detalhes técnicos</summary><dl><dt>Nome interno</dt><dd><code>${n.id}${n.tag?' / '+n.tag:''}</code></dd><dt>Ferramenta</dt><dd><code>${n.tool}</code></dd><dt>Regra de passagem</dt><dd>${n.rule}</dd><dt>Arquivo de origem</dt><dd><code>${n.src}</code></dd></dl></details>`;
+pc.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>abre(b.dataset.g));painel.hidden=false;document.getElementById('fechar').focus()}
+function fecha(){painel.hidden=true;sel=null;destaca();if(volta)volta.focus()}
+document.getElementById('fechar').onclick=fecha;document.addEventListener('keydown',e=>{if(e.key=='Escape'&&!painel.hidden)fecha()});
+function destaca(){N.forEach(n=>n.el.classList.toggle('sel',n.id==sel));E.forEach(x=>{if(x.k=='link')x.el.classList.toggle('on',!!sel&&(x.f==sel||x.t==sel))})}
+function aplica(f){const on=new Set(f.k=='todos'?N.map(n=>n.id):[...f.on,...N.filter(n=>n.tipo!='etapa'&&!f.x.includes(n.id)).map(n=>n.id)]);N.forEach(n=>n.el.classList.toggle('off',!on.has(n.id)));E.forEach(x=>{const o=!(on.has(x.f)&&on.has(x.t))||(f.xe||[]).includes(x.f+'>'+x.t);x.el.classList.toggle('off',o);x.lel&&x.lel.classList.toggle('off',o)});document.getElementById('cont').textContent=`${f.on.length} de ${N.filter(n=>n.tipo=='etapa').length} etapas rodam neste cenário`;document.getElementById('desc').textContent=f.d;document.querySelectorAll('#filtros button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k==f.k))}
+const fl=document.getElementById('filtros');F.forEach(f=>{const b=document.createElement('button');b.type='button';b.dataset.k=f.k;b.textContent=`${f.n} (${f.on.length})`;b.onclick=()=>aplica(f);fl.append(b)});aplica(F[0]);
+function ajusta(){N.forEach(n=>{const b=n.el.querySelector('button'),t=b.querySelector('b'),s=b.querySelector('i');let a=parseFloat(getComputedStyle(t).fontSize),c=parseFloat(getComputedStyle(s).fontSize);while(b.scrollHeight>b.clientHeight+1&&c>9.5){c-=.5;s.style.fontSize=c+'px';if(a>12){a-=.5;t.style.fontSize=a+'px'}}})}
+ajusta();document.fonts&&document.fonts.ready.then(ajusta);
+
+const G=document.getElementById('giro');if(G){const f='M200 200L200 20A180 180 0 0 1 356 290Z',ar='M200 60A140 140 0 1 0 321 270M200 110A90 90 0 1 0 278 245';let c='';for(let i=30;i>=1;i--){const t=i*2.4,o=`translate(${t} ${t})`,k=i==30?'var(--p-ob1)':'var(--p-ob2)';c+=`<g transform="${o}"><path d="${f}" fill="${k}"/><path d="${ar}" fill="none" stroke="${k}" stroke-width="26" stroke-linecap="round"/></g>`}c+=`<path d="${f}" fill="var(--p-dest)"/><path d="${ar}" fill="none" stroke="var(--p-neutra)" stroke-width="26" stroke-linecap="round"/><path d="${ar}" fill="none" stroke="var(--p-base)" stroke-width="3" stroke-linecap="round"/>`;G.innerHTML=`<svg viewBox="0 0 480 480">${c}</svg>`;const G2=document.getElementById('giro2');if(G2)G2.innerHTML=G.innerHTML;
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)addEventListener('scroll',()=>G.style.setProperty('--g',Math.min(scrollY/12,40)+'deg'),{passive:true})}
+
+const cx=document.getElementById('paletas');if(cx){const aplicaP=k=>{document.documentElement.setAttribute('data-paleta',k);cx.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.p==k));try{localStorage.setItem('paleta',k)}catch(e){}};let ini='atual';try{ini=localStorage.getItem('paleta')||'atual'}catch(e){}if(!cx.querySelector('[data-p="'+ini+'"]'))ini='atual';cx.addEventListener('click',e=>{const b=e.target.closest('button');if(b)aplicaP(b.dataset.p)});aplicaP(ini)}
+})();</script>

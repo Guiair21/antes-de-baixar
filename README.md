@@ -15,6 +15,28 @@ Se você viu uma promessa sobre a skill, pode colar junto. A página responde se
 
 Veja um exemplo em `exemplo/mapa-webapp-testing.html`.
 
+## Como ela funciona
+
+```mermaid
+flowchart TD
+    A[Você manda o link] --> B{Quer auditoria?}
+    B --> C[Lê os arquivos sem instalar]
+    C --> D[Procura riscos]
+    C --> E[Busca estrelas e issues]
+    D --> F[Dá o veredito]
+    E --> F
+    D -. se colou uma promessa .-> G[Confere a promessa]
+    G --> F
+    F --> H[Monta o mapa e calcula o gasto]
+    H --> I[Testa a página]
+    I --> J[Entrega a página]
+    I -. se escolheu auditoria .-> K[Agente confere às cegas]
+    K -. aprovada .-> J
+    K -. nota abaixo de 9 .-> I
+```
+
+**[Abrir o mapa interativo](https://guiair21.github.io/antes-de-baixar/)**, com filtros e detalhes de cada etapa.
+
 ## Instalar
 
 Copie esta pasta para `~/.claude/skills/antes-de-baixar`. Depois, abra uma sessão nova:
