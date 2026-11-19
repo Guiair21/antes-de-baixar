@@ -39,7 +39,13 @@ flowchart TD
 
 ## Instalar
 
-Copie esta pasta para `~/.claude/skills/antes-de-baixar`. Depois, abra uma sessão nova:
+Com o Node.js instalado:
+
+```
+npx skills add Guiair21/antes-de-baixar --global --agent claude-code
+```
+
+Ou copie esta pasta para `~/.claude/skills/antes-de-baixar`. Passo a passo, inclusive para o app do Claude: [guicarlos.com.br/antes-de-baixar](https://guicarlos.com.br/antes-de-baixar/). Depois, abra uma sessão nova:
 
 ```
 /antes-de-baixar https://github.com/dono/repositorio
@@ -57,6 +63,8 @@ Antes de instalar esta skill, leia o `SKILL.md`. Ela roda um único script local
 
 ## Crédito
 
-Skill criada por Guilherme Carlos da Silva. Testo inteligência artificial para produzir conteúdo e conto o que deu certo e o que não deu: [@euguicarlos](https://www.instagram.com/euguicarlos/).
+Skill criada por Gui Carlos (Guilherme Carlos da Silva). Testo inteligência artificial para produzir conteúdo e conto o que deu certo e o que não deu: [@euguicarlos](https://www.instagram.com/euguicarlos/).
+
+A skill mostra o que uma instrução manda o seu assistente fazer. Para aprender a escrever a sua, tem o e-book [Instrução de Trabalho com IA](https://guicarlos.com.br/ebook/?o=github).
 
 Licença MIT.
